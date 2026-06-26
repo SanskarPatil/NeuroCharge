@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-bg:      #080E1A;
+  --color-brand-dark:    #FFFFFF;
+  --color-brand-primary: #38BDF8;
+  --color-brand-muted:   #94A3B8;
+  --color-brand-accent:  #0F172A;
+  --color-danger:        #EF4444;
+  --color-success:       #10B981;
+}
+
+body {
+  background-color: #080E1A;
+  color: #FFFFFF;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  background-image:
+    radial-gradient(ellipse 80% 60% at 50% -10%, rgba(56, 189, 248, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 50% at 10% 100%, rgba(15, 23, 42, 0.3) 0%, transparent 50%);
+  background-attachment: fixed;
+}
+@keyframes fadeUp {
+  0%   { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up { animation: fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) forwards; }
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.start-hidden { opacity: 0; }
+
+@keyframes drawPath {
+  to { stroke-dashoffset: 0; }
+}
+.animate-draw-path {
+  animation: drawPath 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes drawClip {
+  from { width: 0px; }
+  to   { width: 500px; }
+}
+.animate-draw-clip {
+  animation: drawClip 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes cardEntry {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-card-entry {
+  animation: cardEntry 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+.delay-stagger-0 { animation-delay: 0ms; }
+.delay-stagger-1 { animation-delay: 60ms; }
+.delay-stagger-2 { animation-delay: 120ms; }
+.delay-stagger-3 { animation-delay: 180ms; }
+.delay-stagger-4 { animation-delay: 240ms; }
+.delay-stagger-5 { animation-delay: 300ms; }
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-reveal.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #080E1A;
+}
+::-webkit-scrollbar-thumb {
+  background: #1E293B;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #38BDF8;
+}
+
+::selection {
+  background: rgba(56, 189, 248, 0.2);
+  color: #FFFFFF;
+}
